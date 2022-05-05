@@ -145,7 +145,7 @@ function ProductScreen() {
                                 numReviews={product.numReviews}
                             ></Rating>
                         </ListGroup.Item>
-                        <ListGroup.Item>Pirce : ${product.price}</ListGroup.Item>
+                        <ListGroup.Item><strong>Price</strong>: ${product.price}</ListGroup.Item>
                         <ListGroup.Item>
                             <Row xs={1} md={2} className="g-2">
                                 {[product.image, ...product.images].map((x) => (
@@ -165,7 +165,7 @@ function ProductScreen() {
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            Description:
+                            <strong>Description</strong>
                             <p>{product.description}</p>
                         </ListGroup.Item>
                     </ListGroup>
@@ -211,7 +211,7 @@ function ProductScreen() {
                 <h2 ref={reviewsRef}>Reviews</h2>
                 <div className="mb-3">
                     {product.reviews.length === 0 && (
-                        <MessageBox>There is no review</MessageBox>
+                        <MessageBox >There are no reviews for this product</MessageBox>
                     )}
                 </div>
                 <ListGroup>
@@ -227,7 +227,7 @@ function ProductScreen() {
                 <div className="my-3">
                     {userInfo ? (
                         <form onSubmit={submitHandler}>
-                            <h2>Write a customer review</h2>
+                            <h2>Write Review</h2>
                             <Form.Group className="mb-3" controlId="rating">
                                 <Form.Label>Rating</Form.Label>
                                 <Form.Select
@@ -240,7 +240,7 @@ function ProductScreen() {
                                     <option value="2">2- Fair</option>
                                     <option value="3">3- Good</option>
                                     <option value="4">4- Very good</option>
-                                    <option value="5">5- Excelent</option>
+                                    <option value="5">5- Excellent</option>
                                 </Form.Select>
                             </Form.Group>
                             <FloatingLabel
